@@ -17,6 +17,20 @@ public class Monster : MonoBehaviour
     private TextMeshProUGUI _tmp;
     private Roll _d20;
 
+    #region GET-SET
+
+    public short GetNumber()
+    {
+        return _number;
+    }
+
+    public Animator GetAnimator()
+    {
+        return _animator;
+    }
+
+    #endregion
+    
     private void Awake()
     {
         _animator = GetComponent<Animator>();
