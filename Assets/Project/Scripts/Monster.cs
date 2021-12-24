@@ -32,28 +32,24 @@ public class Monster : MonoBehaviour
 
     private void Update()
     {
-        ResetState();
-        if (Input.GetKeyDown(KeyCode.Space))
+        /*if (Input.GetKeyDown(KeyCode.Space))
         {
             SpawnMonster();
             _animator.SetBool("Down", true);
             ResetState();
-        }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-
-        }
+        }*/
     }
     
     private void SpawnMonster()
     {
         _number = (short) Random.Range(1, 21);
         _tmp.text = _number.ToString();
+        _animator.SetBool("Down", true);
     }
 
     private void ResetState()
     {
+        _animator.SetBool("Down", false);
         _animator.SetBool("Left", false);
         _animator.SetBool("Right", false);
     }
