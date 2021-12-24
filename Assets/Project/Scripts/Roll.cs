@@ -24,8 +24,12 @@ public class Roll : MonoBehaviour
 
     public GameObject GetBlocker()
     {
-        RollDice();
         return blocker;
+    }
+
+    public void RollD20()
+    {
+        RollDice();
     }
 
     public bool GetRollState()

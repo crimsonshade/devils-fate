@@ -29,6 +29,11 @@ public class Monster : MonoBehaviour
         return _animator;
     }
 
+    public void SpawnNewMonster()
+    {
+        SpawnMonster();
+    }
+
     #endregion
     
     private void Awake()
@@ -58,13 +63,13 @@ public class Monster : MonoBehaviour
     {
         _number = (short) Random.Range(1, 21);
         _tmp.text = _number.ToString();
-        _animator.SetBool("Down", true);
+        _animator.SetTrigger("Down");
     }
 
-    private void ResetState()
+    /*private void ResetState()
     {
         _animator.SetBool("Down", false);
         _animator.SetBool("Left", false);
         _animator.SetBool("Right", false);
-    }
+    }*/
 }
