@@ -27,29 +27,34 @@ public class Monster : MonoBehaviour
 
     private void Start()
     {
-        _number = (short) Random.Range(1, 21);
-        _tmp.text = _number.ToString();
+        SpawnMonster();
     }
 
     private void Update()
     {
-        RestartLevel();
+        ResetState();
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            _animator.SetTrigger("Down");
+            SpawnMonster();
+            _animator.SetBool("Down", true);
+            ResetState();
         }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            _animator.SetTrigger(_d20.GetNumber() >= _number ? "Left" : "Right");
+
         }
     }
-
-    private void RestartLevel()
+    
+    private void SpawnMonster()
     {
-        if (Input.GetKeyDown(KeyCode.Slash))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
+        _number = (short) Random.Range(1, 21);
+        _tmp.text = _number.ToString();
+    }
+
+    private void ResetState()
+    {
+        _animator.SetBool("Left", false);
+        _animator.SetBool("Right", false);
     }
 }

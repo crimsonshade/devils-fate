@@ -10,6 +10,7 @@ using Random = UnityEngine.Random;
 public class Roll : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI tmp;
+    [SerializeField] private GameObject blocker;
 
     private short _number = 1;
     
@@ -21,6 +22,7 @@ public class Roll : MonoBehaviour
     private void Start()
     {
         RollDice();
+        blocker.SetActive(true);
     }
 
     private void Update()
@@ -28,6 +30,11 @@ public class Roll : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             RollDice();
+            blocker.SetActive(false);
+        }
+        else if (Input.GetKeyDown(KeyCode.Space))
+        {
+            blocker.SetActive(true);
         }
     }
     
