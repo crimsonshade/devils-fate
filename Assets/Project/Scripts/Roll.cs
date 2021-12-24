@@ -50,19 +50,6 @@ public class Roll : MonoBehaviour
         blocker.SetActive(true);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            RollDice();
-            blocker.SetActive(false);
-        }
-        else if (Input.GetKeyDown(KeyCode.Space))
-        {
-            blocker.SetActive(true);
-        }
-    }
-    
     private void RollDice()
     {
         if (rolled == false)

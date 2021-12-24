@@ -24,14 +24,6 @@ public class GameManager : MonoBehaviour
         _monster = FindObjectOfType<Monster>();
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Slash))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-    }
-
     #endregion
 
     #region BUTTONS
@@ -61,7 +53,7 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         
-        if (_d20.GetNumber() >= _monster.GetNumber())
+        if (_d20.GetNumber() <= _monster.GetNumber())
         {
             _monster.GetAnimator().SetTrigger("Left");
         }

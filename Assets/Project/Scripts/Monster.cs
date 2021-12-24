@@ -14,7 +14,6 @@ public class Monster : MonoBehaviour
     private Animator _animator;
     private short _number = 1;
     private TextMeshProUGUI _tmp;
-    private Roll _d20;
 
     #region GET_SET
 
@@ -39,7 +38,6 @@ public class Monster : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         transform.position = spawnPoint.position;
-        _d20 = FindObjectOfType<Roll>();
         _tmp = GetComponentInChildren<TextMeshProUGUI>();
     }
 
