@@ -5,7 +5,6 @@
 using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -15,7 +14,13 @@ public class GameManager : MonoBehaviour
     
     private Roll _d20;
     private Monster _monster;
+    private bool _isAlive;
 
+    public bool GetAliveState()
+    {
+        return _isAlive;
+    }
+    
     #region UNITY
 
     private void Awake()
@@ -45,6 +50,7 @@ public class GameManager : MonoBehaviour
         _d20.GetBlocker().SetActive(true);
         _d20.SetRollState(false);
         nextMonster.interactable = false;
+        _isAlive = false;
     }
 
     #endregion
@@ -56,6 +62,7 @@ public class GameManager : MonoBehaviour
         if (_d20.GetNumber() <= _monster.GetNumber())
         {
             _monster.GetAnimator().SetTrigger("Left");
+            _isAlive = true;
         }
         else
         {
