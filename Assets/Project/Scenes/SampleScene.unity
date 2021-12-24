@@ -2608,7 +2608,7 @@ GameObject:
   - component: {fileID: 1715319594}
   - component: {fileID: 1715319595}
   m_Layer: 0
-  m_Name: StartPoint
+  m_Name: SpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2642,6 +2642,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   creatures:
   - {fileID: 7484117612365577058, guid: 84f916045fff38d409c588f694517042, type: 3}
-  - {fileID: 7484117612365577058, guid: 0e4880071047de646bb0edfe1612673c, type: 3}
-  - {fileID: 7484117612365577058, guid: 380d13fe92daf314ea5adff3b5ff9045, type: 3}
-  startPoint: {fileID: 0}
+  _creature: {fileID: 0}
