@@ -13,7 +13,7 @@ public class Roll : MonoBehaviour
 
     private short _number = 1;
     
-    private short GetNumber()
+    public short GetNumber()
     {
         return _number;
     }
