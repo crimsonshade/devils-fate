@@ -2405,6 +2405,7 @@ MonoBehaviour:
   - {fileID: 618905361}
   - {fileID: 497174747}
   - {fileID: 913317174}
+  removeMoney: 30
 --- !u!50 &235927691
 Rigidbody2D:
   serializedVersion: 4
@@ -4362,7 +4363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.17254902, g: 0.17254902, b: 0.17254902, a: 1}
+  m_Color: {r: 0.24705884, g: 0.21960786, b: 0.31764707, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

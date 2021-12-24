@@ -11,9 +11,16 @@ using UnityEngine.PlayerLoop;
 public class RemoveLive : MonoBehaviour
 {
     [SerializeField] private GameObject[] hearts;
+    [SerializeField] private int removeMoney;
 
     private short _state = 0;
-    
+    private GetCoins _coins;
+
+    private void Awake()
+    {
+        _coins = FindObjectOfType<GetCoins>();
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         var monster = other.GetComponent<Monster>();
@@ -35,6 +42,8 @@ public class RemoveLive : MonoBehaviour
         else if (_state == 3)
         {
             hearts[0].SetActive(false);
+            _coins.SetMoney(removeMoney);
+            _coins.SetText();
             _state = 0;
         }
 

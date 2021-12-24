@@ -59,7 +59,7 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         
-        if (_d20.GetNumber() <= _monster.GetNumber())
+        if (_d20.GetNumber() < _monster.GetNumber())
         {
             _monster.GetAnimator().SetTrigger("Left");
             _isAlive = true;

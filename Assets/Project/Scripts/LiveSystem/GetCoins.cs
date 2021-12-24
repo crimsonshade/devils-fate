@@ -11,6 +11,20 @@ public class GetCoins : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _tmp;
     
     private int _money = 0;
+
+    #region GET_SET
+
+    public void SetMoney(int newMoney)
+    {
+        _money -= newMoney;
+    }
+
+    public void SetText()
+    {
+        _tmp.text = _money.ToString();
+    }
+
+    #endregion
     
     private void Start()
     {
