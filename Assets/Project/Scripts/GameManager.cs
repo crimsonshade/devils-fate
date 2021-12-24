@@ -1,5 +1,5 @@
 /* Script Created by Crimsonshade
- * ALl rights reseverd Kappa
+ * ALl rights reserved Kappa
  */
 
 using System;
@@ -34,6 +34,8 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
+    #region BUTTONS
+
     public void B_Reveal()
     {
         _d20.GetBlocker().SetActive(false);
@@ -52,6 +54,8 @@ public class GameManager : MonoBehaviour
         _d20.SetRollState(false);
         nextMonster.interactable = false;
     }
+
+    #endregion
 
     private IEnumerator MonsterState(float time)
     {

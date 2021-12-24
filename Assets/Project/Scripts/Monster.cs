@@ -1,11 +1,10 @@
 /* Script Created by Crimsonshade
- * ALl rights reseverd Kappa
+ * ALl rights reserved Kappa
  */
 
 using System;
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
 
 public class Monster : MonoBehaviour
@@ -17,7 +16,7 @@ public class Monster : MonoBehaviour
     private TextMeshProUGUI _tmp;
     private Roll _d20;
 
-    #region GET-SET
+    #region GET_SET
 
     public short GetNumber()
     {
@@ -48,28 +47,12 @@ public class Monster : MonoBehaviour
     {
         SpawnMonster();
     }
-
-    private void Update()
-    {
-        /*if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SpawnMonster();
-            _animator.SetBool("Down", true);
-            ResetState();
-        }*/
-    }
     
     private void SpawnMonster()
     {
         _number = (short) Random.Range(1, 21);
         _tmp.text = _number.ToString();
+        
         _animator.SetTrigger("Down");
     }
-
-    /*private void ResetState()
-    {
-        _animator.SetBool("Down", false);
-        _animator.SetBool("Left", false);
-        _animator.SetBool("Right", false);
-    }*/
 }

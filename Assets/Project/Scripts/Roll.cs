@@ -1,5 +1,5 @@
 /* Script Created by Crimsonshade
- * ALl rights reseverd Kappa
+ * ALl rights reserved Kappa
  */
 
 using System;
