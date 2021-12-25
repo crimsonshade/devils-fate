@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b78532c5603414e47940adfb52da3452, type: 3}
+  m_Name: WinGame
+  m_EditorClassIdentifier: 
+  image: {fileID: -4658123360840285283, guid: 45d359b52a7fbf8418b4ca605a6f2adb, type: 3}
+  title: Win the game
+  price: 5000
