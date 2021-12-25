@@ -6,7 +6,7 @@ using System;
 using TMPro;
 using UnityEngine;
 
-public class GetCoins : MonoBehaviour
+public class CoinSystem : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _tmp;
     
@@ -14,12 +14,24 @@ public class GetCoins : MonoBehaviour
 
     #region GET_SET
 
-    public void SetMoney(int newMoney)
+    public int GetMoney()
     {
-        _money -= newMoney;
+        return _money;
     }
 
-    public void SetText()
+    public void RemoveMoney(int newMoney)
+    {
+        _money -= newMoney;
+        ChangeMoneyText();
+    }
+
+    public void GetMoney(int newMoney)
+    {
+        _money += newMoney;
+        ChangeMoneyText();
+    }
+    
+    public void ChangeMoneyText()
     {
         _tmp.text = _money.ToString();
     }
@@ -29,15 +41,6 @@ public class GetCoins : MonoBehaviour
     private void Start()
     {
         _money = 100;
-        _tmp.text = _money.ToString();
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        var monster = other.GetComponent<Monster>();
-        if (monster == null) return;
-        
-        _money += 20;
         _tmp.text = _money.ToString();
     }
 }
