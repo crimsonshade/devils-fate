@@ -13,8 +13,9 @@ public class RemoveLive : MonoBehaviour
     [SerializeField] private int getDeadMoney;
     [SerializeField] private int loseHearthMoney;
 
-    private short _state = 0;
+    private short      _state = 0;
     private CoinSystem _coins;
+    private bool       _isHearthLose = false;
 
     #endregion
 
@@ -29,25 +30,22 @@ public class RemoveLive : MonoBehaviour
 
         if (monster == null) { return; }
         _state++;
-    }
-
-    private void Update()
-    {
-        switch (_state)
+        
+        if (_state == 1)
         {
-            case 1:
-                hearts[2].SetActive(false);
-                _coins.GetMoney(loseHearthMoney);
-                break;
-            case 2:
-                hearts[1].SetActive(false);
-                _coins.GetMoney(loseHearthMoney);
-                break;
-            case 3:
-                hearts[0].SetActive(false);
-                _coins.GetMoney(getDeadMoney);
-                _state = 0;
-                break;
+            hearts[2].SetActive(false);
+            _coins.GetMoney(loseHearthMoney);
+        }
+        else if (_state == 2)
+        {
+            hearts[1].SetActive(false);
+            _coins.GetMoney(loseHearthMoney);
+        }
+        else if (_state == 3)
+        {
+            hearts[0].SetActive(false);
+            _coins.GetMoney(getDeadMoney);
+            _state = 0;
         }
 
         if (_state == 0)
@@ -57,5 +55,10 @@ public class RemoveLive : MonoBehaviour
                 t.SetActive(true);
             }
         }
+    }
+
+    private void Update()
+    {
+        
     }
 }
