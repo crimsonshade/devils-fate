@@ -4569,6 +4569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b6b85a14eb9f35459342c0465f7c039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  revealButton: {fileID: 184145563}
   nextMonster: {fileID: 894461812}
   seconds: 0.5
 --- !u!1 &1191118195
@@ -5668,7 +5669,7 @@ GameObject:
   - component: {fileID: 1887312876}
   - component: {fileID: 1887312877}
   m_Layer: 5
-  m_Name: Center
+  m_Name: Buttons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

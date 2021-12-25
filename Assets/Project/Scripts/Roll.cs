@@ -12,7 +12,7 @@ public class Roll : MonoBehaviour
     [SerializeField] private TextMeshProUGUI tmp;
     [SerializeField] private GameObject blocker;
 
-    private bool rolled;
+    private bool _rolled = true;
     private short _number = 1;
 
     #region GET_SET
@@ -34,28 +34,29 @@ public class Roll : MonoBehaviour
 
     public bool GetRollState()
     {
-        return rolled;
+        return _rolled;
     }
 
     public void SetRollState(bool state)
     {
-        rolled = state;
+        _rolled = state;
     }
 
     #endregion
     
     private void Start()
     {
-        rolled = false;
+        _rolled = false;
         blocker.SetActive(true);
     }
 
     private void RollDice()
     {
-        if (rolled == false)
+        if (_rolled == false)
         {
             _number = (short) Random.Range(1, 21);
             tmp.text = _number.ToString();
+            _rolled = true;
         }
     }
 }

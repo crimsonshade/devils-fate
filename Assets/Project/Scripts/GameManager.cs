@@ -9,6 +9,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private Button revealButton;
     [SerializeField] private Button nextMonster;
     [SerializeField] private float seconds = 0.2f;
     
@@ -38,7 +39,9 @@ public class GameManager : MonoBehaviour
         _d20.GetBlocker().SetActive(false);
         _d20.RollD20();
         _d20.SetRollState(true);
+        
         nextMonster.interactable = true;
+        revealButton.interactable = false;
 
         StartCoroutine(MonsterState(seconds));
         StopCoroutine(MonsterState(seconds));
@@ -49,7 +52,10 @@ public class GameManager : MonoBehaviour
         _monster.SpawnNewMonster();
         _d20.GetBlocker().SetActive(true);
         _d20.SetRollState(false);
+        
         nextMonster.interactable = false;
+        revealButton.interactable = true;
+        
         _isAlive = false;
     }
 
