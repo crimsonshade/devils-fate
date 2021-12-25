@@ -2615,7 +2615,7 @@ MonoBehaviour:
   m_text: 'You are the assistant of the ''ruler of the underground'' and with the
     help of your D20 (20-sided dice) you decide which soul survies and which stays
     in hell. However, thanks to a bug in the system, you now get money for every
-    soul you save, and you lose money for every soul that stays in hell.
+    sole you safe, and you lose money for every soul that stays in hell.
 
 
     After
@@ -2657,7 +2657,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
