@@ -14,5 +14,5 @@ public class ShopSO : ScriptableObject
 
     public Sprite GetImage() { return image; }
     public string GetTitle() { return title; }
-    public string GetPrice() { return price.ToString(); }
+    public int GetPrice() { return price; }
 }

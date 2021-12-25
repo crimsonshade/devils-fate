@@ -48,7 +48,7 @@ public class Monster : MonoBehaviour
     
     private void SpawnMonster()
     {
-        _number = (short) Random.Range(5, 16);
+        _number = (short) Random.Range(5, 11);
         _tmp.text = _number.ToString();
         
         _animator.SetTrigger("Down");

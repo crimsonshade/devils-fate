@@ -20,15 +20,38 @@ public class Shop : MonoBehaviour
     [SerializeField] private Button button;
     [SerializeField] private bool notInteractable = false;
 
+    private CoinSystem _coin;
+    private SpriteRenderer _monster;
+
+    private void Awake()
+    {
+        _coin = FindObjectOfType<CoinSystem>();
+        _monster = FindObjectOfType<Monster>().GetComponent<SpriteRenderer>();
+    }
+
     private void Start()
     {
         image.sprite = item.GetImage();
         text.text = item.GetTitle();
-        buttonText.text = item.GetPrice();
+        buttonText.text = item.GetPrice().ToString();
 
         if (notInteractable)
         {
             button.interactable = false;
         }
+    }
+
+    public void B_BuyItem()
+    {
+        if (_coin.GetMoney() >= item.GetPrice())
+        {
+            _coin.RemoveMoney(item.GetPrice());
+            button.interactable = false;
+        }
+    }
+
+    public void B_ChangeSprite()
+    {
+        _monster.sprite = item.GetImage();
     }
 }
