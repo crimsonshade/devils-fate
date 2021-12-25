@@ -52,5 +52,6 @@ public class Monster : MonoBehaviour
         _tmp.text = _number.ToString();
         
         _animator.SetTrigger("Down");
+        //transform.Translate(new Vector3(0.0f, -1.0f, 0.0f));
     }
 }

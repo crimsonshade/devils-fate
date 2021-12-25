@@ -87,6 +87,7 @@ public class GameManager : MonoBehaviour
         if (_d20.GetNumber() < _monster.GetNumber())
         {
             _monster.GetAnimator().SetTrigger("Left");
+            // _monster.transform.Translate(new Vector3(-10.0f, 0.0f, 0.0f));
             _isAlive = true;
         }
         else

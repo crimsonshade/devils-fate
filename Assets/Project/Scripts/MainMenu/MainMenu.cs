@@ -44,6 +44,11 @@ public class MainMenu : MonoBehaviour
         mainMenu.SetActive(true);
     }
 
+    public void _HowToPlay()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
+
     #endregion
 
     #region CREDITS
